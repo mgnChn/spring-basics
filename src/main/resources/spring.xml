@@ -5,11 +5,24 @@
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!-- bean definitions here -->
-    <bean id="dev" class="com.megandemo.Dev">
+    <bean id="dev" class="com.megandemo.Dev" autowire="byType" primary="true">
+<!--        <property name="age" value="12"/> Use for setter injection -->
+<!--        <constructor-arg index="0" value="14"/> Use for constructor injection-->
+<!--        <property name="laptop" ref="laptopId"/> Use for setter injection -->
+<!--        <constructor-arg name="laptop" ref="laptopId"/>-->
+<!--        <property name="computer" ref="desktopId"/> Use for autowiring byName-->
     </bean>
 
-    <bean id="laptop" class="com.megandemo.Laptop">
+    <bean id="dev1" class="com.megandemo.Dev">
     </bean>
+
+    <bean id="laptopId" class="com.megandemo.Laptop" primary="true">
+    </bean>
+
+    <bean id="desktopId" class="com.megandemo.Desktop">
+    </bean>
+
+
 
 </beans>
 
